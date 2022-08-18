@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "57c27455-2b02-4955-bf8e-a82d89dad821",
+		"name": "Pruebas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Talos",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Android 12; Mobile; rv:68.0) Gecko/68.0 Firefox/103.0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://www.talosintelligence.com/reputation_center/lookup?search=bbva.com",
+					"protocol": "https",
+					"host": [
+						"www",
+						"talosintelligence",
+						"com"
+					],
+					"path": [
+						"reputation_center",
+						"lookup"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "bbva.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AlienVault - Suscribed Pulses",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-OTX-API-KEY",
+						"value": "{{API-KEY}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://otx.alienvault.com/api/v1/pulses/subscribed?page=1",
+					"protocol": "https",
+					"host": [
+						"otx",
+						"alienvault",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"pulses",
+						"subscribed"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AlienVault - Submit URL",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-OTX-API-KEY",
+						"type": "text",
+						"value": "{{API-KEY}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"https://cross-general.carreto.net\"\r\n}"
+				},
+				"url": {
+					"raw": "https://otx.alienvault.com/api/v1/indicators/submit_url",
+					"protocol": "https",
+					"host": [
+						"otx",
+						"alienvault",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"indicators",
+						"submit_url"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AlienVault - Get URL Analysis",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-OTX-API-KEY",
+						"type": "text",
+						"value": "{{API-KEY}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://otx.alienvault.com/api/v1/indicators/url/https://cross-general.carreto.net/general",
+					"protocol": "https",
+					"host": [
+						"otx",
+						"alienvault",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"indicators",
+						"url",
+						"https:",
+						"",
+						"cross-general.carreto.net",
+						"general"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Censys Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
